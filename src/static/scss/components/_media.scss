@@ -130,6 +130,8 @@
       height: 100vh;
       background: $white;
       opacity: 0;
+      visibility: hidden;
+      z-index: -1;
     }
     &-nav{
       transition: all ease 300ms;
@@ -175,6 +177,7 @@
       }
       &:after{
         opacity: 1;
+        visibility: visible;
       }
     }
   }
