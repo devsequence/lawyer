@@ -59,7 +59,15 @@
         width: 400px;
       }
     }
-
+    &-item{
+      &:nth-of-type(2){
+        right: 100px;
+      }
+      &__text{
+        font-size: 12px;
+        line-height: 12px;
+      }
+    }
   }
   .step{
     &-title{
@@ -611,9 +619,13 @@
 }
 @media screen and (max-width: 576px) {
   .hero {
+    &-desc{
+      bottom: 75px;
+    }
     &-media {
       img {
-        object-position: -1080px 0;
+        transform: none;
+        object-position: 0;
       }
     }
     &-button{
@@ -739,20 +751,27 @@
       max-width: 150px;
     }
   }
+
 }
 
 
 @media screen and (max-width: 480px) {
+  .work{
+    &-media{
+      height: 590px;
+    }
+    &-item{
+      &:nth-of-type(3){
+        top: 390px;
+      }
+      &:nth-of-type(4){
+        top: 500px;
+      }
+    }
+  }
   .contact {
     .bg-contact{
       height: 290px;
-    }
-  }
-  .hero {
-    &-media {
-      img {
-        object-position: -1180px 0;
-      }
     }
   }
 }
@@ -765,10 +784,10 @@
   .work{
     &-item{
       &:nth-of-type(3){
-        top: 350px;
+        top: 390px;
       }
       &:nth-of-type(4){
-        top: 440px;
+        top: 490px;
       }
     }
   }
