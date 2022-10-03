@@ -1407,11 +1407,11 @@ input, textarea {
     display: flex;
     flex-wrap: wrap; }
   .step-item {
-    max-width: 217px;
+    max-width: 300px;
     margin-bottom: 80px;
-    margin-right: 123px; }
+    margin-right: 55px; }
     .step-item:nth-of-type(3) {
-      margin-left: 225px; }
+      margin-left: 125px; }
     .step-item:nth-of-type(4) {
       margin-right: 0; }
     .step-item__numb {
@@ -1433,8 +1433,8 @@ input, textarea {
         background: #FECD68; }
     .step-item__text {
       font-weight: 500;
-      font-size: 10px;
-      line-height: 12px;
+      font-size: 14px;
+      line-height: 14px;
       color: #626262; }
   .step-line {
     width: 100%;
@@ -1991,6 +1991,7 @@ input, textarea {
   .step-line {
     max-width: 100%; }
   .step-item {
+    max-width: 260px;
     margin-right: 75px; }
     .step-item:nth-of-type(3) {
       margin-left: 75px; }
@@ -2165,6 +2166,9 @@ input, textarea {
       .step-item__numb {
         font-size: 15px;
         line-height: 18px; }
+      .step-item__text {
+        font-size: 12px;
+        line-height: 12px; }
     .step-des {
       max-width: 100%;
       width: 100%;
