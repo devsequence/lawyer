@@ -27,7 +27,29 @@ $('.reviews-slider').slick({
     slidesToShow: 3,
     slidesToScroll: 1,
     prevArrow: $('.reviews-prev'),
-    nextArrow: $('.reviews-next')
+    nextArrow: $('.reviews-next'),
+    responsive: [
+        {
+            breakpoint: 992,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1,
+            }
+        },
+        {
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 1,
+            }
+        },
+        {
+            breakpoint: 480,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
+        }
+    ]
 });
 $('.question-item__title').on('click', function (e) {
     var $this = $(this);
@@ -39,24 +61,82 @@ $('.license-slider__inner').slick({
     slidesToShow: 4,
     slidesToScroll: 1,
     prevArrow: $('.license-prev'),
-    nextArrow: $('.license-next')
+    nextArrow: $('.license-next'),
+    responsive: [
+        {
+            breakpoint: 992,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 1,
+
+            }
+        },
+        {
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1
+            }
+        },
+        {
+            breakpoint: 340,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
+        }
+    ]
 });
 $('.partner-slider__inner').slick({
     infinite: true,
     slidesToShow: 5,
     slidesToScroll: 1,
     prevArrow: $('.partner-prev'),
-    nextArrow: $('.partner-next')
+    nextArrow: $('.partner-next'),
+    responsive: [
+        {
+            breakpoint: 992,
+            settings: {
+                slidesToShow: 4,
+                slidesToScroll: 1,
+
+            }
+        },
+        {
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 1
+            }
+        },
+        {
+            breakpoint: 576,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 1
+            }
+        },
+        {
+            breakpoint: 480,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
+        }
+    ]
 });
-// $(document).mouseup(function (e){
-//     var div = $('.header-phone');
-//     if (!div.is(e.target)
-//         && div.has(e.target).length === 0) {
-//         $('.header-phone ul').removeClass('is-open');
-//     }
-// });
+$(document).mouseup(function (e){
+    var div = $('.header-phone, .header-nav');
+    if (!div.is(e.target)
+        && div.has(e.target).length === 0) {
+        $('body').removeClass('scroll');
+        $('.header, .header-btn').removeClass('active');
+    }
+});
 $('.header-nav a').on('click', function (e) {
     e.preventDefault();
+    $('body').removeClass('scroll');
+    $('.header, .header-btn').removeClass('active');
     var $thsHref = $(this).attr('href');
     $('html, body').animate({
         scrollTop: $($thsHref).offset().top - 100
@@ -68,4 +148,11 @@ $('.footer-nav a').on('click', function (e) {
     $('html, body').animate({
         scrollTop: $($thsHref).offset().top
     }, 1000);
+});
+$('.header-btn').on('click', function (e) {
+    e.preventDefault();
+    var $ths = $(this);
+    $ths.toggleClass('active');
+    $('.header').toggleClass('active');
+    $('body').toggleClass('scroll');
 });
