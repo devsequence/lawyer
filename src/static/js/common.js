@@ -126,7 +126,7 @@ $('.partner-slider__inner').slick({
     ]
 });
 $(document).mouseup(function (e){
-    var div = $('.header-phone, .header-nav');
+    var div = $('.header-phone, .header-nav, .header-btn');
     if (!div.is(e.target)
         && div.has(e.target).length === 0) {
         $('body').removeClass('scroll');
